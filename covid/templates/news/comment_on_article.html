@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main id="main">
+    <header>
+        <h1>{{date}}</h1>
+    </header>
+
+    <div style="clear:both">
+        <a href="{{article.hyperlink}}" target="_blank">
+            <img src={{article.image_hyperlink}} alt="article image">
+        </a>
+        <h2>{{article.title}}</h2>
+        <p>{{article.first_para}}</p>
+        <div style="float:left">
+            {% for tag in article.tags %}
+            <button class="btn-general-disabled" disable>{{ tag.name }}</button>
+            {% endfor %}
+        </div>
+    </article>
+</main>
+{% endblock %}
