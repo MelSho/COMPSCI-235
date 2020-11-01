@@ -46,19 +46,6 @@
             <button class="btn-general" onclick="location.href='{{ tag_urls[tag.name] }}'">{{ tag.name }}</button>
             {% endfor %}
         </div>
-        <div style="float:right">
-            {% if article.comments|length > 0 and article.id != show_comments_for_article %}
-                <button class="btn-general" onclick="location.href='{{ article.view_comment_url }}'">{{ article.comments|length }} comments</button>
-            {% endif %}
-            <button class="btn-general" onclick="location.href='{{ article.add_comment_url }}'">Comment</button>
-        </div>
-        {% if article.id == show_comments_for_article %}
-        <div style="clear:both">
-            {% for comment in article.comments %}
-                <p>{{comment.comment_text}}, by {{comment.username}}, {{comment.timestamp}}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
     </article>
     {% endfor %}
 
